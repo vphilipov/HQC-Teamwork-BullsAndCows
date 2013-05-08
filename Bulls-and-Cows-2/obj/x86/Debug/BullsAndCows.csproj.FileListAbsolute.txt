@@ -1,0 +1,5 @@
+C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.exe
+C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.pdb
+C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCows.csprojResolveAssemblyReference.cache
+C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.exe
+C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.pdb

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace bikove
+namespace BullsAndCows
 {
-    public class gameScore : IComparable
+    public class GameScore : IComparable
     {
-        public gameScore(string ime, int guesses)
+        public GameScore(string ime, int guesses)
         {
             this.Name = ime;
             this.Guesses = guesses;
@@ -26,7 +26,7 @@ namespace bikove
         }
         public override bool Equals(object obj)
         {
-            gameScore objectToCompare = obj as gameScore;
+            GameScore objectToCompare = obj as GameScore;
             if (objectToCompare == null)
             {
                 return false;
@@ -52,7 +52,7 @@ namespace bikove
 
         public int CompareTo(object obj)
         {
-            gameScore objectToCompare = obj as gameScore;
+            GameScore objectToCompare = obj as GameScore;
             if (objectToCompare == null)
             {
                 return -1;
@@ -77,7 +77,7 @@ namespace bikove
 
 
         }
-        public static gameScore Deserialize(string data)
+        public static GameScore Deserialize(string data)
         {
             string[] dataAsStringArray = data.Split(new string[] { "_:::_" }, StringSplitOptions.None);
             if (dataAsStringArray.Length != 2) return null;
@@ -87,7 +87,7 @@ namespace bikove
             int guesses = 0;
             int.TryParse(dataAsStringArray[1], out guesses);
 
-            return new gameScore(name, guesses);
+            return new GameScore(name, guesses);
         }
     }
 }

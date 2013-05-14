@@ -1,29 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Runtime.Serialization;
 
 namespace BullsAndCows
 {
     public class GameScore : IComparable
     {
-        public GameScore(string ime, int guesses)
+        public GameScore(string name, int guesses)
         {
-            this.Name = ime;
+            this.Name = name;
             this.Guesses = guesses;
         }
 
         public string Name
         {
             get;
-            private set;
+            private set; 
         }
+
         public int Guesses
-        {
+        { 
             get;
-            private set;
+            private set; 
         }
+
         public override bool Equals(object obj)
         {
             GameScore objectToCompare = obj as GameScore;
@@ -33,9 +32,6 @@ namespace BullsAndCows
             }
             else
             {
-
-
-
                 return this.Guesses.Equals(objectToCompare) && this.Name.Equals(objectToCompare);
             }
         }
@@ -59,10 +55,7 @@ namespace BullsAndCows
             }
             if (this.Guesses.CompareTo(objectToCompare.Guesses) == 0)
             {
-                
-				
-				
-				return this.Name.CompareTo(objectToCompare.Name);
+                return this.Name.CompareTo(objectToCompare.Name);
             }
             else
             {
@@ -73,17 +66,17 @@ namespace BullsAndCows
         public string Serialize()
         {
             return string.Format("{0}_:::_{1}", this.Name, this.Guesses);
-
-
-
         }
+
         public static GameScore Deserialize(string data)
         {
             string[] dataAsStringArray = data.Split(new string[] { "_:::_" }, StringSplitOptions.None);
-            if (dataAsStringArray.Length != 2) return null;
+            if (dataAsStringArray.Length != 2)
+            {
+                return null;
+            }
 
             string name = dataAsStringArray[0];
-
             int guesses = 0;
             int.TryParse(dataAsStringArray[1], out guesses);
 

@@ -8,3 +8,8 @@ F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Co
 F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.exe
 F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.pdb
 F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCows.csprojResolveAssemblyReference.cache
+D:\BullsAndCowsProject\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.exe
+D:\BullsAndCowsProject\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.pdb
+D:\BullsAndCowsProject\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.exe
+D:\BullsAndCowsProject\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.pdb
+D:\BullsAndCowsProject\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCows.csprojResolveAssemblyReference.cache

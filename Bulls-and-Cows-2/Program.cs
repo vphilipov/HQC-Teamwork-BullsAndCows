@@ -53,10 +53,18 @@ namespace BullsAndCows
                         {
                             try
                             {
-                                Result guessResult = bullsAndCowsNumber.TryToGuess(command);
+                                //Result guessResult = bullsAndCowsNumber.TryToGuess(command);
+                                // Loose couple issue fix: BullsAndCows.TryGuess not working directly with Result struct, but
+                                // returns an array[Bulls, Cows] with found matches, and provide them to a new Result Object here
+                                
+                                int[] bullsAndCowsResult = bullsAndCowsNumber.TryToGuess(command);
+                                Result guessResult = new Result();
+                                guessResult.Bulls = bullsAndCowsResult[0];
+                                guessResult.Cows = bullsAndCowsResult[1];
+
                                 if (guessResult.Bulls == 4)
                                 {
-                                    if (bullsAndCowsNumber.cheats == 0)
+                                    if (bullsAndCowsNumber.Cheats == 0)
                                     {
                                         Console.Write(NumberGuessedWithoutCheats, bullsAndCowsNumber.GuessesCount, bullsAndCowsNumber.GuessesCount == 1 ? "attempt" : "attempts");
                                         string name = Console.ReadLine();
@@ -66,7 +74,7 @@ namespace BullsAndCows
                                     {
                                         Console.WriteLine(NumberGuessedWithCheats,
                                             bullsAndCowsNumber.GuessesCount, bullsAndCowsNumber.GuessesCount == 1 ? "attempt" : "attempts",
-                                            bullsAndCowsNumber.cheats, bullsAndCowsNumber.cheats == 1? "cheat" : "cheats");
+                                            bullsAndCowsNumber.Cheats, bullsAndCowsNumber.Cheats == 1? "cheat" : "cheats");
                                     }
                                     Console.Write(scoreBoard);
                                     Console.WriteLine();

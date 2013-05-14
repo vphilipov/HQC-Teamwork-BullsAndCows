@@ -3,3 +3,8 @@ C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\De
 C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCows.csprojResolveAssemblyReference.cache
 C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.exe
 C:\Users\Vess\Documents\GitHub\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.pdb
+F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.exe
+F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCowsGame.pdb
+F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.exe
+F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\bin\Debug\BullsAndCowsGame.pdb
+F:\Other\Telerik\Telerik_HQC\Team Project\HQC-Teamwork-BullsAndCows\Bulls-and-Cows-2\obj\x86\Debug\BullsAndCows.csprojResolveAssemblyReference.cache

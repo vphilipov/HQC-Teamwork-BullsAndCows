@@ -1,25 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BullsAndCows
+﻿namespace BullsAndCows
 {
+    using System;
+    using System.Linq;
+    using System.Text;
+
     public class BullsAndCowsNumber
-    {
-        Random rrr;
-        char[] cheatNumber;
-
-        public BullsAndCowsNumber()
-        {
-            rrr = new Random();
-            cheatNumber = new char[4] { 'X', 'X', 'X', 'X' };
-            this.cheats = 0;
-            this.GuessesCount = 0;
-            this.GenerateRandomNumbers();
-        }
-
-        public int cheats
+    {   
+        public int Cheats
         {
             get;
             private set;
@@ -54,14 +41,25 @@ namespace BullsAndCows
             get;
             private set;
         }
+        
+        /* Constructor */
+        public BullsAndCowsNumber()
+        {   
+            this.Cheats = 0;
+            this.GuessesCount = 0;
+            this.GenerateRandomNumbers();
+        }
 
         public string GetCheat()
         {
-            if (this.cheats < 4)
+            Random randPosGenerator = new Random();
+            char[] cheatNumber = new char[4] { 'X', 'X', 'X', 'X' };
+
+            if (this.Cheats < 4)
             {
                 while (true)
                 {
-                    int randPossition = rrr.Next(0, 4);
+                    int randPossition = randPosGenerator.Next(0, 4);
                     if (cheatNumber[randPossition] == 'X')
                     {
                         switch (randPossition)
@@ -74,69 +72,78 @@ namespace BullsAndCows
                         break;
                     }
                 }
-                cheats++;
+                
+                this.Cheats++;
             }
+
             return new String(cheatNumber);
         }
 
-        public Result TryToGuess(string number)
+        /* Loose Couple issue fix: return an array[Bulls, Cows] matches found, instead of a Result Object */
+        public int[] TryToGuess(string number)
         {
             if (string.IsNullOrEmpty(number) || number.Trim().Length != 4)
             {
                 throw new ArgumentException("Invalid string number");
             }
-            return TryToGuess(number[0] - '0', number[1] - '0', number[2] - '0', number[3] - '0');
+
+            int[] bullsAndCows = GetBullsAndCowsMatches(number[0] - '0', number[1] - '0', number[2] - '0', number[3] - '0');
+
+            return bullsAndCows;
         }
 
-        private Result TryToGuess(int firstDigit, int secondDigit, int thirdDigit, int fourthDigit)
+        /* Loose Couple issue fix: return an array[Bulls, Cows] matches found, instead of a Result Object */
+        private int[] GetBullsAndCowsMatches(int firstDigit, int secondDigit, int thirdDigit, int fourthDigit)
         {
             if (firstDigit < 0 || firstDigit > 9)
             {
                 throw new ArgumentException("Invalid first digit");
             }
+
             if (secondDigit < 0 || secondDigit > 9)
             {
                 throw new ArgumentException("Invalid second digit");
             }
+
             if (thirdDigit < 0 || thirdDigit > 9)
             {
                 throw new ArgumentException("Invalid third digit");
             }
+
             if (fourthDigit < 0 || fourthDigit > 9)
             {
                 throw new ArgumentException("Invalid fourth digit");
             }
 
             this.GuessesCount++;
-
             int bulls = 0;
 
-            bool isFirstDigitBullOrCow = false;
             // checks if firstDigit is a bull:
+            bool isFirstDigitBullOrCow = false;            
             if (this.FirstDigit == firstDigit)
             {
                 isFirstDigitBullOrCow = true;
                 bulls++;
             }
 
-            bool isSecondDigitBullOrCow = false;
             // checks if secondDigit is a bull:
+            bool isSecondDigitBullOrCow = false;
             if (this.SecondDigit == secondDigit)
             {
                 isSecondDigitBullOrCow = true;
                 bulls++;
             }
 
-            bool isThirdDigitBullOrCow = false;
             // checks if thirdDigit is a bull:
+            bool isThirdDigitBullOrCow = false;            
             if (this.ThirdDigit == thirdDigit)
             {
                 isThirdDigitBullOrCow = true;
                 bulls++;
             }
 
-            bool isFourthDigitBullOrCow = false;
             // checks if fourthDigit is a bull:
+            bool isFourthDigitBullOrCow = false;            
             if (this.FourthDigit == fourthDigit)
             {
                 isFourthDigitBullOrCow = true;
@@ -144,95 +151,107 @@ namespace BullsAndCows
             }
 
             int cows = 0;
+
             // checks if firstDigit is cow:
-            if (!isSecondDigitBullOrCow && firstDigit == SecondDigit)
+            if (!isSecondDigitBullOrCow && firstDigit == this.SecondDigit)
             {
                 isSecondDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isThirdDigitBullOrCow && firstDigit == ThirdDigit)
+            else if (!isThirdDigitBullOrCow && firstDigit == this.ThirdDigit)
             {
                 isThirdDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isFourthDigitBullOrCow && firstDigit == FourthDigit)
+            else if (!isFourthDigitBullOrCow && firstDigit == this.FourthDigit)
             {
                 isFourthDigitBullOrCow = true;
                 cows++;
             }
 
             // checks if secondDigit is cow:
-            if (!isFirstDigitBullOrCow && secondDigit == FirstDigit)
+            if (!isFirstDigitBullOrCow && secondDigit == this.FirstDigit)
             {
                 isFirstDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isThirdDigitBullOrCow && secondDigit == ThirdDigit)
+            else if (!isThirdDigitBullOrCow && secondDigit == this.ThirdDigit)
             {
                 isThirdDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isFourthDigitBullOrCow && secondDigit == FourthDigit)
+            else if (!isFourthDigitBullOrCow && secondDigit == this.FourthDigit)
             {
                 isFourthDigitBullOrCow = true;
                 cows++;
             }
 
             // checks if thirdDigit is cow:
-            if (!isFirstDigitBullOrCow && thirdDigit == FirstDigit)
+            if (!isFirstDigitBullOrCow && thirdDigit == this.FirstDigit)
             {
                 isFirstDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isSecondDigitBullOrCow && thirdDigit == SecondDigit)
+            else if (!isSecondDigitBullOrCow && thirdDigit == this.SecondDigit)
             {
                 isSecondDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isFourthDigitBullOrCow && thirdDigit == FourthDigit)
+            else if (!isFourthDigitBullOrCow && thirdDigit == this.FourthDigit)
             {
                 isFourthDigitBullOrCow = true;
                 cows++;
             }
 
             // checks if fourthDigit is cow:
-            if (!isFirstDigitBullOrCow && fourthDigit == FirstDigit)
+            if (!isFirstDigitBullOrCow && fourthDigit == this.FirstDigit)
             {
                 isFirstDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isSecondDigitBullOrCow && fourthDigit == SecondDigit)
+            else if (!isSecondDigitBullOrCow && fourthDigit == this.SecondDigit)
             {
                 isSecondDigitBullOrCow = true;
                 cows++;
             }
-            else if (!isThirdDigitBullOrCow && fourthDigit == ThirdDigit)
+            else if (!isThirdDigitBullOrCow && fourthDigit == this.ThirdDigit)
             {
                 isThirdDigitBullOrCow = true;
                 cows++;
             }
 
-            Result guessResult = new Result();
-            guessResult.Bulls = bulls;
-            guessResult.Cows = cows;
-            return guessResult;
+            int[] bullsAndCowsResult = new int[2];
+            
+            //Result guessResult = new Result();
+            //guessResult.Bulls = bulls;
+            //guessResult.Cows = cows;
+            //return guessResult;
+
+            bullsAndCowsResult[0] = bulls;
+            bullsAndCowsResult[1] = cows;
+
+            return bullsAndCowsResult;
         }
 
         private void GenerateRandomNumbers()
         {
-            this.FirstDigit = rrr.Next(0, 10);
-            this.SecondDigit = rrr.Next(0, 10);
-            this.ThirdDigit = rrr.Next(0, 10);
-            this.FourthDigit = rrr.Next(0, 10);
+            Random randNumberGenerator = new Random();
+
+            this.FirstDigit = randNumberGenerator.Next(0, 10);
+            this.SecondDigit = randNumberGenerator.Next(0, 10);
+            this.ThirdDigit = randNumberGenerator.Next(0, 10);
+            this.FourthDigit = randNumberGenerator.Next(0, 10);
         }
 
         public override string ToString()
         {
             StringBuilder numberStringBuilder = new StringBuilder();
-            numberStringBuilder.Append(FirstDigit);
-            numberStringBuilder.Append(SecondDigit);
-            numberStringBuilder.Append(ThirdDigit);
-            numberStringBuilder.Append(FourthDigit);
+
+            numberStringBuilder.Append(this.FirstDigit);
+            numberStringBuilder.Append(this.SecondDigit);
+            numberStringBuilder.Append(this.ThirdDigit);
+            numberStringBuilder.Append(this.FourthDigit);
+
             return numberStringBuilder.ToString();
         }
 
@@ -243,18 +262,19 @@ namespace BullsAndCows
             {
                 return false;
             }
-            else
-            {
-                return (FirstDigit == objectToCompare.FirstDigit &&
-                        SecondDigit == objectToCompare.SecondDigit &&
-                        ThirdDigit == objectToCompare.ThirdDigit &&
-                        FourthDigit == objectToCompare.FourthDigit);
-            }
+
+            // Removed unnessesary else
+            return (this.FirstDigit == objectToCompare.FirstDigit &&
+                    this.SecondDigit == objectToCompare.SecondDigit &&
+                    this.ThirdDigit == objectToCompare.ThirdDigit &&
+                    this.FourthDigit == objectToCompare.FourthDigit);
+            
         }
 
         public override int GetHashCode()
         {
-            return FirstDigit.GetHashCode() ^ SecondDigit.GetHashCode() ^ ThirdDigit.GetHashCode() ^ FourthDigit.GetHashCode();
+            int hashCode = this.FirstDigit.GetHashCode() ^ this.SecondDigit.GetHashCode() ^ this.ThirdDigit.GetHashCode() ^ this.FourthDigit.GetHashCode();
+            return hashCode;
         }
     }
 }

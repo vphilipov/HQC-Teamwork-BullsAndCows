@@ -14,11 +14,8 @@ namespace BullsAndCows
         public const string NumberGuessedWithCheats = "Congratulations! You guessed the secret number in {0} {1} and {2} {3}.\nYou are not allowed to enter the top scoreboard.";
         public const string GoodBuyMessage = "Good bye!";
 
-        static void Main(string[] args)
+        private static BullsAndCowsNumber Engine(Scoreboard scoreBoard, BullsAndCowsNumber bullsAndCowsNumber)
         {
-            BullsAndCowsNumber bullsAndCowsNumber = new BullsAndCowsNumber();
-            Scoreboard scoreBoard = new Scoreboard(ScoresFile);
-            Console.WriteLine(WelcomeMessage);
             while (true)
             {
                 Console.Write("Enter your guess or command: ");
@@ -91,6 +88,15 @@ namespace BullsAndCows
                         }
                 }
             }
+            return bullsAndCowsNumber;
+         }
+
+        static void Main()
+        {
+            BullsAndCowsNumber bullsAndCowsNumber = new BullsAndCowsNumber();
+            Scoreboard scoreBoard = new Scoreboard(ScoresFile);
+            Console.WriteLine(WelcomeMessage);
+            bullsAndCowsNumber = Engine(scoreBoard, bullsAndCowsNumber);
             scoreBoard.SaveToFile(ScoresFile);
         }
     }

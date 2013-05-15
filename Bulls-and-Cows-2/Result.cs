@@ -5,6 +5,15 @@ namespace BullsAndCows
 {
     public struct Result
     {
+        private int bulls;
+        private int cows;
+
+        public Result(int bulls, int cows)
+        {
+            this.Bulls = bulls;
+            this.Cows = cows;
+        }
+
         public int Bulls;
         public int Cows;
 

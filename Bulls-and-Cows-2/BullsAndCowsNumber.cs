@@ -50,6 +50,18 @@
             this.GenerateRandomNumbers();
         }
 
+        /* Constructor with parameters - for unit testing purpoises */
+        public BullsAndCowsNumber(int firstNum, int secondNum, int thirdnum, int fourthNum)
+        {
+            this.Cheats = 0;
+            this.GuessesCount = 0;
+
+            this.FirstDigit = firstNum;
+            this.SecondDigit = secondNum;
+            this.ThirdDigit = thirdnum;
+            this.FourthDigit = fourthNum;
+        }
+
         public string GetCheat()
         {
             Random randPosGenerator = new Random();

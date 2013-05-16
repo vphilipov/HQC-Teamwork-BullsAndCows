@@ -18,6 +18,13 @@ namespace BullsAndCows
 
         private GameNumber theNumber;
         private PlayerGuess playerGuess;
+        private ScoreBoard scoreBoard;
+
+
+        public Engine(ScoreBoard board)
+        {
+            this.scoreBoard = board;
+        }
 
         public void Run()
         {

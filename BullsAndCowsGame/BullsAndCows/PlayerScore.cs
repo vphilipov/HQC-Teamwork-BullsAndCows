@@ -19,6 +19,7 @@ namespace BullsAndCows
             {
                 return this.playerName;
             }
+
             private set
             {
                 if (string.IsNullOrWhiteSpace(value))

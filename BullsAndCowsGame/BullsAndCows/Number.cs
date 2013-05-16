@@ -14,9 +14,8 @@ namespace BullsAndCows
         private byte fourthDigit;
 
         public Number()
-        {
-             
-        }
+        { }
+        
 
         public Number(byte firstDigit, byte secondDigit, byte thirdDigit, byte fourthDigit)
         {

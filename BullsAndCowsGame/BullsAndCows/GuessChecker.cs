@@ -113,8 +113,6 @@ namespace BullsAndCows
 
             Result guessResult = new Result(bulls, cows);
             return guessResult;
-
         }
-
     }
 }

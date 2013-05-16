@@ -61,6 +61,7 @@ namespace BullsAndCows
             {
                 return "Top scoreboard is empty." + Environment.NewLine;
             }
+
             StringBuilder scoreBoard = new StringBuilder();
             scoreBoard.AppendLine("Scoreboard:");
             int count = 0;
@@ -68,7 +69,10 @@ namespace BullsAndCows
             {
                 count++;
                 scoreBoard.AppendLine(string.Format("{0}. {1}", count, playerScore));
-                if (count > MaxPlayersToShowInScoreboard) break;
+                if (count > MaxPlayersToShowInScoreboard)
+                {
+                    break;
+                }
             }
             return scoreBoard.ToString();
         }

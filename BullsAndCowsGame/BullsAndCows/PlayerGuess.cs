@@ -28,6 +28,5 @@ namespace BullsAndCows
                 throw new ArgumentException("Invalid command!");
             }
         }
-
     }
 }

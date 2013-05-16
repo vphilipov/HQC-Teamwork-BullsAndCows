@@ -56,10 +56,9 @@ namespace BullsAndCows
                                 //Result guessResult = theNumber.TryToGuess(command);
                                 // Loose couple issue fix: BullsAndCows.TryGuess not working directly with Result struct, but
                                 // returns an array[Bulls, Cows] with found matches, and provide them to a new Result Object here
-                                int[] bullsAndCowsResult = this.theNumber.TryToGuess(command);
-                                Result guessResult = new Result();
-                                guessResult.Bulls = bullsAndCowsResult[0];
-                                guessResult.Cows = bullsAndCowsResult[1];
+                                //int[] bullsAndCowsResult = this.theNumber.TryToGuess(command);
+                                playerGuess = PlayerGuess.TryToParse(command);
+                                Result guessResult = GuessChecker.GetBullsAndCowsMatches(playerGuess, theNumber);
 
                                 if (guessResult.Bulls == 4)
                                 {

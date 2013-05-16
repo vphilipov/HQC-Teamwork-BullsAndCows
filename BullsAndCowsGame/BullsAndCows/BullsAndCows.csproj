@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Engine.cs" />
     <Compile Include="GameNumber.cs" />
+    <Compile Include="GuessChecker.cs" />
     <Compile Include="Number.cs" />
     <Compile Include="PlayerGuess.cs" />
     <Compile Include="PlayerScore.cs" />

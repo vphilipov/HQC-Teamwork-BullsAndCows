@@ -3,18 +3,30 @@ using System.Linq;
 
 namespace BullsAndCows
 {
-    class PlayerScore :IComparable
+    class PlayerScore : IComparable
     {
+        private string playerName;
+
         public PlayerScore(string name, int guesses)
         {
-            this.Name = name;
+            this.PlayerName = name;
             this.Guesses = guesses;
         }
 
-        public string Name
+        public string PlayerName
         {
-            get;
-            private set;
+            get
+            {
+                return this.playerName;
+            }
+            private set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentOutOfRangeException("Player name cannot be blank!");
+                }
+                this.playerName = value;
+            }
         }
 
         public int Guesses
@@ -32,18 +44,18 @@ namespace BullsAndCows
             }
             else
             {
-                return this.Guesses.Equals(objectToCompare) && this.Name.Equals(objectToCompare);
+                return this.Guesses.Equals(objectToCompare) && this.PlayerName.Equals(objectToCompare);
             }
         }
 
         public override int GetHashCode()
         {
-            return this.Name.GetHashCode() ^ this.Guesses.GetHashCode();
+            return this.PlayerName.GetHashCode() ^ this.Guesses.GetHashCode();
         }
 
         public override string ToString()
         {
-            return string.Format("{0} --> {1} {2}", this.Name, this.Guesses, this.Guesses == 1 ? "guess" : "guesses");
+            return string.Format("{0} --> {1} {2}", this.PlayerName, this.Guesses, this.Guesses == 1 ? "guess" : "guesses");
         }
 
         public int CompareTo(object obj)
@@ -55,7 +67,7 @@ namespace BullsAndCows
             }
             if (this.Guesses.CompareTo(objectToCompare.Guesses) == 0)
             {
-                return this.Name.CompareTo(objectToCompare.Name);
+                return this.PlayerName.CompareTo(objectToCompare.PlayerName);
             }
             else
             {
@@ -65,7 +77,7 @@ namespace BullsAndCows
 
         public string Serialize()
         {
-            return string.Format("{0}_:::_{1}", this.Name, this.Guesses);
+            return string.Format("{0}_:::_{1}", this.PlayerName, this.Guesses);
         }
 
         public static PlayerScore Deserialize(string data)

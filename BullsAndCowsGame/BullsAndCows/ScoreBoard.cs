@@ -8,7 +8,7 @@ namespace BullsAndCows
 {
     class ScoreBoard
     {
-        private SortedSet<PlayerScore> scores;
+        private readonly SortedSet<PlayerScore> scores;
         private const int MaxPlayersToShowInScoreboard = 10;
 
         public ScoreBoard(string filename)
@@ -25,9 +25,9 @@ namespace BullsAndCows
                     }
                 }
             }
-            catch (IOException)
+            catch (IOException ex)
             {
-                // Stop reading
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -49,9 +49,9 @@ namespace BullsAndCows
                     }
                 }
             }
-            catch (IOException)
+            catch (IOException ex)
             {
-                // Stop writing
+                Console.WriteLine(ex.Message);
             }
         }
 

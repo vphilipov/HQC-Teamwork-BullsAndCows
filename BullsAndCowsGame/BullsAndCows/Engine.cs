@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BullsAndCows
 {
@@ -18,12 +15,14 @@ namespace BullsAndCows
 
         private GameNumber theNumber;
         private PlayerGuess playerGuess;
+        private Cheat cheats;
         private ScoreBoard scoreBoard;
-
+        private byte guessCount;
 
         public Engine(ScoreBoard board)
         {
             this.scoreBoard = board;
+            this.guessCount = 0;
         }
 
         public void Run()
@@ -49,37 +48,35 @@ namespace BullsAndCows
                             Console.WriteLine();
                             Console.WriteLine(WelcomeMessage);
                             this.theNumber = new GameNumber();
+                            this.cheats.Count = 0;
                             break;
                         }
                     case "help":
                         {
-                            Console.WriteLine("The number looks like {0}.", this.theNumber.GetCheat());
+                            Console.WriteLine("The number looks like {0}.", cheats.GetCheat(theNumber));
                             break;
                         }
                     default:
                         {
                             try
                             {
-                                //Result guessResult = theNumber.TryToGuess(command);
-                                // Loose couple issue fix: BullsAndCows.TryGuess not working directly with Result struct, but
-                                // returns an array[Bulls, Cows] with found matches, and provide them to a new Result Object here
-                                //int[] bullsAndCowsResult = this.theNumber.TryToGuess(command);
                                 playerGuess = PlayerGuess.TryToParse(command);
                                 Result guessResult = GuessChecker.GetBullsAndCowsMatches(playerGuess, theNumber);
+                                this.guessCount++;
 
                                 if (guessResult.Bulls == 4)
                                 {
-                                    if (this.theNumber.Cheats == 0)
+                                    if (this.cheats.Count == 0)
                                     {
-                                        Console.Write(NumberGuessedWithoutCheats, this.theNumber.GuessesCount, this.theNumber.GuessesCount == 1 ? "attempt" : "attempts");
+                                        Console.Write(NumberGuessedWithoutCheats, this.guessCount, this.guessCount == 1 ? "attempt" : "attempts");
                                         string name = Console.ReadLine();
-                                        scoreBoard.AddScore(name, this.theNumber.GuessesCount);
+                                        scoreBoard.AddScore(name, this.guessCount);
                                     }
                                     else
                                     {
                                         Console.WriteLine(NumberGuessedWithCheats,
-                                            this.theNumber.GuessesCount, this.theNumber.GuessesCount == 1 ? "attempt" : "attempts",
-                                            theNumber.Cheats, this.theNumber.Cheats == 1 ? "cheat" : "cheats");
+                                            this.guessCount, this.guessCount == 1 ? "attempt" : "attempts",
+                                            this.cheats.Count, this.cheats.Count == 1 ? "cheat" : "cheats");
                                     }
                                     Console.Write(scoreBoard);
                                     Console.WriteLine();
@@ -99,7 +96,6 @@ namespace BullsAndCows
                         }
                 }
             }
-            return this.theNumber;
          }
     }
 }

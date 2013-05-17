@@ -48,7 +48,8 @@ namespace BullsAndCows.Tests
         public void TryToParsePlayerGuessMethodMethodCorrectTest()
         {
             PlayerGuess expected = new PlayerGuess(5, 6, 7, 8);
-            Assert.AreEqual(expected, PlayerGuess.TryToParse("5678"));
+            PlayerGuess result = PlayerGuess.TryToParse("5678");
+            Assert.AreEqual(expected.ToString(), result.ToString());
         }
 
         [TestMethod]

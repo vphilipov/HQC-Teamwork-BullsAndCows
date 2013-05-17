@@ -54,6 +54,7 @@
     <Compile Include="PlayerGuessTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultTests.cs" />
+    <Compile Include="GuessCheckerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BullsAndCows\BullsAndCows.csproj">

@@ -10,7 +10,7 @@ namespace BullsAndCows
         }
 
         public static PlayerGuess TryToParse(string value)
-        {
+        { 
             int number;
             bool result = int.TryParse(value, out number);
             if (result)

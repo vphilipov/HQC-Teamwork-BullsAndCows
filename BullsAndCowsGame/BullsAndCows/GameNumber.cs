@@ -12,6 +12,15 @@ namespace BullsAndCows
             this.FourthDigit = GenerateRandomDigit();
         }
 
+        public GameNumber(byte firstDigit, byte secondDigit, byte thirdDigit, byte fourthDigit)
+            : base()
+        {
+            this.FirstDigit = firstDigit;
+            this.SecondDigit = secondDigit;
+            this.ThirdDigit = thirdDigit;
+            this.FourthDigit = fourthDigit;
+        }
+
         private byte GenerateRandomDigit()
         {
             Random randNumberGenerator = new Random();

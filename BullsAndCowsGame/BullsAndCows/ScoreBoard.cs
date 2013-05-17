@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace BullsAndCows
@@ -68,6 +67,7 @@ namespace BullsAndCows
             StringBuilder scoreBoard = new StringBuilder();
             scoreBoard.AppendLine("Scoreboard:");
             int count = 0;
+
             foreach (PlayerScore playerScore in scores)
             {
                 count++;
@@ -77,6 +77,7 @@ namespace BullsAndCows
                     break;
                 }
             }
+
             return scoreBoard.ToString();
         }
     }

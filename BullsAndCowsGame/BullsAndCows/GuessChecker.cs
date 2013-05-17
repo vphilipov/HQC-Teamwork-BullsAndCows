@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace BullsAndCows
 {
@@ -63,6 +62,7 @@ namespace BullsAndCows
                     cows++;
                 }
             }
+
             // checks if playerGuess.SecondDigit is cow:
             if (!isSecondDigitBull)
             {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace BullsAndCows
 {
@@ -71,7 +70,7 @@ namespace BullsAndCows
                 }
             }
         }
-  
+
         private void PlayerGuessExecutor(string command)
         {
             playerGuess = PlayerGuess.TryToParse(command);

@@ -2,12 +2,15 @@ using System;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Represents the number to be found.
+    /// </summary>
     public class GameNumber : Number
     {
-        /// <summary>
-        /// Represents the number to be found.
-        /// </summary>
-        public GameNumber() : base()
+        private static readonly Random randNumberGenerator = new Random();
+
+        public GameNumber()
+            : base()
         {
             this.FirstDigit = GenerateRandomDigit();
             this.SecondDigit = GenerateRandomDigit();
@@ -26,9 +29,8 @@ namespace BullsAndCows
 
         private byte GenerateRandomDigit()
         {
-            Random randNumberGenerator = new Random();
-
-            byte digit = (byte)randNumberGenerator.Next(Number.MinDigitValue, Number.MaxDigitValue + 1);
+            byte digit = (byte)randNumberGenerator.Next(
+                Number.MinDigitValue, Number.MaxDigitValue + 1);
             return digit;
         }
     }

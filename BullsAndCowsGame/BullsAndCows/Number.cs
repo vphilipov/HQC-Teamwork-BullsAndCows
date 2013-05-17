@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace BullsAndCows
 {
@@ -18,7 +17,7 @@ namespace BullsAndCows
 
         public Number()
         { }
-        
+
 
         public Number(byte firstDigit, byte secondDigit, byte thirdDigit, byte fourthDigit)
         {

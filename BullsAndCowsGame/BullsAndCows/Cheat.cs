@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace BullsAndCows
 {
-    class Cheat
+    public class Cheat
     {
         private const byte MaxCheatsAllowed = 4;
         private char[] cheatNumber;
@@ -33,7 +33,7 @@ namespace BullsAndCows
             {
                 return this.count;
             }
-            set
+            private set
             {
                 this.count = value;
             }
@@ -42,7 +42,6 @@ namespace BullsAndCows
         public string GetCheat(GameNumber theNumber)
         {
             Random randPosGenerator = new Random();
-            //char[] cheatNumber = new char[MaxCheatsAllowed] { 'X', 'X', 'X', 'X' };
 
             if (this.count < MaxCheatsAllowed)
             {

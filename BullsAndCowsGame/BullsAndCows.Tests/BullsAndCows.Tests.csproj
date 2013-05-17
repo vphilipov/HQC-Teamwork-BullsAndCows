@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="GameNumberTests.cs" />
     <Compile Include="PlayerGuessTests.cs" />
+    <Compile Include="PlayerScoreTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultTests.cs" />
     <Compile Include="GuessCheckerTest.cs" />

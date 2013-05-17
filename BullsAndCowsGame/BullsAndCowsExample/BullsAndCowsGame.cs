@@ -16,6 +16,7 @@ namespace BullsAndCowsExample
             ScoreBoard board = new ScoreBoard(ScoresFile);
             Engine engine = new Engine(board);
             engine.Run();
+            board.SaveToFile(ScoresFile);
         }
     }
 }

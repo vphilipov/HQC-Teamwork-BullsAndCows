@@ -3,9 +3,10 @@ using System.Linq;
 
 namespace BullsAndCows
 {
-    class PlayerScore : IComparable
+    public class PlayerScore : IComparable
     {
         private string playerName;
+        private int guesses;
 
         public PlayerScore(string name, int guesses)
         {
@@ -24,7 +25,7 @@ namespace BullsAndCows
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentOutOfRangeException("Player name cannot be blank!");
+                    throw new ArgumentNullException("Player name cannot be blank!");
                 }
                 this.playerName = value;
             }
@@ -32,8 +33,18 @@ namespace BullsAndCows
 
         public int Guesses
         {
-            get;
-            private set;
+            get
+            {
+                return this.guesses;
+            }
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Player guesses cannot be negative!");
+                }
+                this.guesses = value;
+            }
         }
 
         public override bool Equals(object obj)
@@ -45,7 +56,8 @@ namespace BullsAndCows
             }
             else
             {
-                return this.Guesses.Equals(objectToCompare) && this.PlayerName.Equals(objectToCompare);
+                return this.Guesses.Equals(objectToCompare) &&
+                    this.PlayerName.Equals(objectToCompare);
             }
         }
 
@@ -56,7 +68,8 @@ namespace BullsAndCows
 
         public override string ToString()
         {
-            return string.Format("{0} --> {1} {2}", this.PlayerName, this.Guesses, this.Guesses == 1 ? "guess" : "guesses");
+            return string.Format("{0} --> {1} {2}", this.PlayerName,
+                this.Guesses, this.Guesses == 1 ? "guess" : "guesses");
         }
 
         public int CompareTo(object obj)
@@ -64,8 +77,9 @@ namespace BullsAndCows
             PlayerScore objectToCompare = obj as PlayerScore;
             if (objectToCompare == null)
             {
-                return -1;
+                throw new ArgumentNullException("Player score to compare to is null!");
             }
+
             if (this.Guesses.CompareTo(objectToCompare.Guesses) == 0)
             {
                 return this.PlayerName.CompareTo(objectToCompare.PlayerName);

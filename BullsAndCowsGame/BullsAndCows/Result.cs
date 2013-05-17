@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Represents player guess result.
+    /// </summary>
     public class Result
     {
         private const int MinCount = 0;

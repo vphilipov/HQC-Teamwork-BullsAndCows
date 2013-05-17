@@ -6,6 +6,9 @@ using System.Text;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Writes and reads player scores from file.
+    /// </summary>
     public class ScoreBoard
     {
         private readonly SortedSet<PlayerScore> scores;

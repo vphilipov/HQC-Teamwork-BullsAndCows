@@ -4,6 +4,9 @@ namespace BullsAndCows
 {
     public class GameNumber : Number
     {
+        /// <summary>
+        /// Represents the number to be found.
+        /// </summary>
         public GameNumber() : base()
         {
             this.FirstDigit = GenerateRandomDigit();

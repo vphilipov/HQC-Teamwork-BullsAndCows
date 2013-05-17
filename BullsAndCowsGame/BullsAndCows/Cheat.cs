@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Reveals bulls to the player.
+    /// </summary>
     public class Cheat
     {
         private const byte MaxCheatsAllowed = 4;

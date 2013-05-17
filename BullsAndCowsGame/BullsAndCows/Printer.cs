@@ -2,6 +2,9 @@
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Prints messages on the console.
+    /// </summary>
     public static class Printer
     {
         private const string WelcomeMessage = "Welcome to “Bulls and Cows” game. Please try to guess my secret 4-digit number.\nUse 'top' to view the top scoreboard, 'restart' to start a new game and 'help' to cheat and 'exit' to quit the game.";

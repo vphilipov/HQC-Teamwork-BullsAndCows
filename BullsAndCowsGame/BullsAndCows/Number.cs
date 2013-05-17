@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Abstract class representing game number type.
+    /// </summary>
     public abstract class Number
     {
         protected const byte MinDigitValue = 0;

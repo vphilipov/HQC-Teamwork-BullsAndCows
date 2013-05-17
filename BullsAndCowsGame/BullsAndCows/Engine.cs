@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Executes the game.
+    /// </summary>
     public class Engine
     {
         private GameNumber theNumber;
@@ -19,6 +22,9 @@ namespace BullsAndCows
             this.theNumber = new GameNumber();
         }
 
+        /// <summary>
+        /// Starts the game engine.
+        /// </summary>
         public void Run()
         {
             Printer.PrintWelcomeMessage();

@@ -2,6 +2,9 @@ using System;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Represents a single guess made by the player.
+    /// </summary>
     public class PlayerGuess : Number
     {
         public PlayerGuess(byte firstDigit, byte secondDigit, byte thirdDigit, byte fourthDigit)

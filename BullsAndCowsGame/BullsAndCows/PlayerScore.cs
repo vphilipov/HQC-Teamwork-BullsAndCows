@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Represents player scores to entered in the Score Board.
+    /// </summary>
     public class PlayerScore : IComparable
     {
         private string playerName;

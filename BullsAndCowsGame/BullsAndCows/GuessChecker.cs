@@ -3,6 +3,10 @@ using System.Linq;
 
 namespace BullsAndCows
 {
+    /// <summary>
+    /// Checks player guess against game number.
+    /// </summary>
+    /// <return>An instance of Result</return>
     public static class GuessChecker
     {
         public static Result GetBullsAndCowsMatches(PlayerGuess playerGuess, GameNumber gameNumber)

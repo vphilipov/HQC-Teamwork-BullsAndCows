@@ -10,6 +10,7 @@ namespace BullsAndCowsExample
     class BullsAndCowsGame
     {
         public const string ScoresFile = "scores.txt";
+
         static void Main()
         {
             ScoreBoard board = new ScoreBoard(ScoresFile);

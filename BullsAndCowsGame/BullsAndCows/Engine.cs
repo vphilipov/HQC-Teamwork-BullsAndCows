@@ -5,7 +5,7 @@ namespace BullsAndCows
 {
     public class Engine
     {
-        public const string ScoresFile = "scores.txt";
+        //public const string ScoresFile = "scores.txt";
         public const string WelcomeMessage = "Welcome to “Bulls and Cows” game. Please try to guess my secret 4-digit number.\nUse 'top' to view the top scoreboard, 'restart' to start a new game and 'help' to cheat and 'exit' to quit the game.";
         public const string WrongNumberMessage = "Wrong number!";
         public const string InvalidCommandMessage = "Incorrect guess or command!";
@@ -29,6 +29,8 @@ namespace BullsAndCows
 
         public void Run()
         {
+            Console.WriteLine(WelcomeMessage);
+
             while (true)
             {
                 Console.Write("Enter your guess or command: ");
@@ -48,9 +50,7 @@ namespace BullsAndCows
                     case "restart":
                         {
                             Console.WriteLine();
-                            Console.WriteLine(WelcomeMessage);
-                            this.theNumber = new GameNumber();
-                            this.cheats.Count = 0;
+                            ResetGameData();
                             break;
                         }
                     case "help":
@@ -81,9 +81,7 @@ namespace BullsAndCows
                                             this.cheats.Count, this.cheats.Count == 1 ? "cheat" : "cheats");
                                     }
                                     Console.Write(scoreBoard);
-                                    Console.WriteLine();
-                                    Console.WriteLine(WelcomeMessage);
-                                    this.theNumber = new GameNumber();
+                                    ResetGameData();
                                 }
                                 else
                                 {
@@ -99,5 +97,14 @@ namespace BullsAndCows
                 }
             }
          }
+
+        private void ResetGameData()
+        {
+            Console.WriteLine();
+            Console.WriteLine(WelcomeMessage);
+            this.theNumber = new GameNumber();
+            this.cheats = new Cheat();
+            this.guessCount = 0;
+        }
     }
 }

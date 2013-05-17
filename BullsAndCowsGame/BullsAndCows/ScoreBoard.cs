@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BullsAndCows
 {
-    class ScoreBoard
+    public class ScoreBoard
     {
         private readonly SortedSet<PlayerScore> scores;
         private const int MaxPlayersToShowInScoreboard = 10;

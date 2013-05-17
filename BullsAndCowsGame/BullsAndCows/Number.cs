@@ -31,7 +31,7 @@ namespace BullsAndCows
             {
                 return this.firstDigit;
             }
-            private set
+            protected set
             {
                 if (value < MinDigitValue || MaxDigitValue < value)
                 {
@@ -48,7 +48,7 @@ namespace BullsAndCows
             {
                 return this.secondDigit;
             }
-            private set
+            protected set
             {
                 if (value < MinDigitValue || MaxDigitValue < value)
                 {
@@ -65,7 +65,7 @@ namespace BullsAndCows
             {
                 return this.thirdDigit;
             }
-            private set
+            protected set
             {
                 if (value < MinDigitValue || MaxDigitValue < value)
                 {
@@ -82,7 +82,7 @@ namespace BullsAndCows
             {
                 return this.fourthDigit;
             }
-            private set
+            protected set
             {
                 if (value < MinDigitValue || MaxDigitValue < value)
                 {

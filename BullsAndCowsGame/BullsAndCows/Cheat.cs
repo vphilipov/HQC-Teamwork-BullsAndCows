@@ -33,7 +33,7 @@ namespace BullsAndCows
             {
                 return this.count;
             }
-            private set
+            set
             {
                 this.count = value;
             }

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace BullsAndCows
 {
-    class Result
+    public class Result
     {
         private const int MinCount = 0;
         private const int MaxCount = 4;
@@ -15,7 +15,7 @@ namespace BullsAndCows
             this.Bulls = bulls;
             this.Cows = cows;
 
-            if (!IsTotalCorrect(bulls, cows))
+            if (IsTotalCorrect(bulls, cows))
             {
                 throw new ArgumentOutOfRangeException(string.Format(
                         "Total number of bulls and cows must be between {0} and {1}!",

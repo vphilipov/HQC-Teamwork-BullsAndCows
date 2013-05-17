@@ -23,6 +23,8 @@ namespace BullsAndCows
         {
             this.scoreBoard = board;
             this.guessCount = 0;
+            this.cheats = new Cheat();
+            this.theNumber = new GameNumber();
         }
 
         public void Run()

@@ -44,71 +44,81 @@ namespace BullsAndCows
             int cows = 0;
 
             // checks if playerGuess.playerGuess.FirstDigit is cow:
-            if (!isSecondDigitBullOrCow && playerGuess.FirstDigit == gameNumber.SecondDigit)
+            if (!isFirstDigitBullOrCow)
             {
-                isSecondDigitBullOrCow = true;
-                cows++;
+                if (!isSecondDigitBullOrCow && playerGuess.FirstDigit == gameNumber.SecondDigit)
+                {
+                    isSecondDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isThirdDigitBullOrCow && playerGuess.FirstDigit == gameNumber.ThirdDigit)
+                {
+                    isThirdDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isFourthDigitBullOrCow && playerGuess.FirstDigit == gameNumber.FourthDigit)
+                {
+                    isFourthDigitBullOrCow = true;
+                    cows++;
+                }
             }
-            else if (!isThirdDigitBullOrCow && playerGuess.FirstDigit == gameNumber.ThirdDigit)
-            {
-                isThirdDigitBullOrCow = true;
-                cows++;
-            }
-            else if (!isFourthDigitBullOrCow && playerGuess.FirstDigit == gameNumber.FourthDigit)
-            {
-                isFourthDigitBullOrCow = true;
-                cows++;
-            }
-
             // checks if playerGuess.SecondDigit is cow:
-            if (!isFirstDigitBullOrCow && playerGuess.SecondDigit == gameNumber.FirstDigit)
+            if (!isSecondDigitBullOrCow)
             {
-                isFirstDigitBullOrCow = true;
-                cows++;
+                if (!isFirstDigitBullOrCow && playerGuess.SecondDigit == gameNumber.FirstDigit)
+                {
+                    isFirstDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isThirdDigitBullOrCow && playerGuess.SecondDigit == gameNumber.ThirdDigit)
+                {
+                    isThirdDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isFourthDigitBullOrCow && playerGuess.SecondDigit == gameNumber.FourthDigit)
+                {
+                    isFourthDigitBullOrCow = true;
+                    cows++;
+                }
             }
-            else if (!isThirdDigitBullOrCow && playerGuess.SecondDigit == gameNumber.ThirdDigit)
-            {
-                isThirdDigitBullOrCow = true;
-                cows++;
-            }
-            else if (!isFourthDigitBullOrCow && playerGuess.SecondDigit == gameNumber.FourthDigit)
-            {
-                isFourthDigitBullOrCow = true;
-                cows++;
-            }
-
             // checks if playerGuess.ThirdDigit is cow:
-            if (!isFirstDigitBullOrCow && playerGuess.ThirdDigit == gameNumber.FirstDigit)
+            if (!isThirdDigitBullOrCow)
             {
-                isFirstDigitBullOrCow = true;
-                cows++;
-            }
-            else if (!isSecondDigitBullOrCow && playerGuess.ThirdDigit == gameNumber.SecondDigit)
-            {
-                isSecondDigitBullOrCow = true;
-                cows++;
-            }
-            else if (!isFourthDigitBullOrCow && playerGuess.ThirdDigit == gameNumber.FourthDigit)
-            {
-                isFourthDigitBullOrCow = true;
-                cows++;
+                if (!isFirstDigitBullOrCow && playerGuess.ThirdDigit == gameNumber.FirstDigit)
+                {
+                    isFirstDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isSecondDigitBullOrCow && playerGuess.ThirdDigit == gameNumber.SecondDigit)
+                {
+                    isSecondDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isFourthDigitBullOrCow && playerGuess.ThirdDigit == gameNumber.FourthDigit)
+                {
+                    isFourthDigitBullOrCow = true;
+                    cows++;
+                }
             }
 
             // checks if playerGuess.FourthDigit is cow:
-            if (!isFirstDigitBullOrCow && playerGuess.FourthDigit == gameNumber.FirstDigit)
+            if (!isFourthDigitBullOrCow)
             {
-                isFirstDigitBullOrCow = true;
-                cows++;
-            }
-            else if (!isSecondDigitBullOrCow && playerGuess.FourthDigit == gameNumber.SecondDigit)
-            {
-                isSecondDigitBullOrCow = true;
-                cows++;
-            }
-            else if (!isThirdDigitBullOrCow && playerGuess.FourthDigit == gameNumber.ThirdDigit)
-            {
-                isThirdDigitBullOrCow = true;
-                cows++;
+                if (!isFirstDigitBullOrCow && playerGuess.FourthDigit == gameNumber.FirstDigit)
+                {
+                    isFirstDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isSecondDigitBullOrCow && playerGuess.FourthDigit == gameNumber.SecondDigit)
+                {
+                    isSecondDigitBullOrCow = true;
+                    cows++;
+                }
+                else if (!isThirdDigitBullOrCow && playerGuess.FourthDigit == gameNumber.ThirdDigit)
+                {
+                    isThirdDigitBullOrCow = true;
+                    cows++;
+                }
             }
 
             Result guessResult = new Result(bulls, cows);

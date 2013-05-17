@@ -46,7 +46,6 @@ namespace BullsAndCows.Tests
             Assert.AreEqual(expected.ToString(), result.ToString());
         }
 
-        [Ignore]
         [TestMethod]
         public void GetBullsAndCowsMatchesOneBullandTwoCowTest()
         {
@@ -68,7 +67,6 @@ namespace BullsAndCows.Tests
             Assert.AreEqual(expected.ToString(), result.ToString());
         }
 
-        [Ignore]
         [TestMethod]
         public void GetBullsAndCowsMatchesFourCowsTest()
         {
@@ -89,7 +87,6 @@ namespace BullsAndCows.Tests
             Assert.AreEqual(expected.ToString(), result.ToString());
         }
 
-        [Ignore]
         [TestMethod]
         public void GetBullsAndCowsMatchesThreeCowsTest()
         {
@@ -100,7 +97,6 @@ namespace BullsAndCows.Tests
             Assert.AreEqual(expected.ToString(), result.ToString());
         }
 
-        [Ignore]
         [TestMethod]
         public void GetBullsAndCowsMatchesTwoBullsAndTwoCowsTest()
         {
@@ -111,7 +107,6 @@ namespace BullsAndCows.Tests
             Assert.AreEqual(expected.ToString(), result.ToString());
         }
 
-        [Ignore]
         [TestMethod]
         public void GetBullsAndCowsMatchesOneBullsAndTwoCowsTest()
         {

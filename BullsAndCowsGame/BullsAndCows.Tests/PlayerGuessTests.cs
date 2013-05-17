@@ -7,7 +7,7 @@ namespace BullsAndCows.Tests
     public class PlayerGuessTests
     {
         [TestMethod]
-        public void NumberConstructorCorrectTest()
+        public void NumberParametersConstructorCorrectTest()
         {
             PlayerGuess number = new PlayerGuess(1, 2, 3, 4);
             Assert.AreEqual(1, number.FirstDigit);
@@ -45,7 +45,7 @@ namespace BullsAndCows.Tests
         }
 
         [TestMethod]
-        public void TryToParseMethodCorrectTest()
+        public void TryToParsePlayerGuessMethodMethodCorrectTest()
         {
             PlayerGuess expected = new PlayerGuess(5, 6, 7, 8);
             Assert.AreEqual(expected, PlayerGuess.TryToParse("5678"));
@@ -53,7 +53,7 @@ namespace BullsAndCows.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TryToParseMethodIncorrectInputTest()
+        public void TryToParsePlayerGuessMethodIncorrectInputTest()
         {
             PlayerGuess.TryToParse("wrong");
         }
